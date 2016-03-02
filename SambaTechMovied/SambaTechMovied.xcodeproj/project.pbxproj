@@ -14,6 +14,15 @@
 		B169A5921C865672000A2111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B169A5901C865672000A2111 /* LaunchScreen.storyboard */; };
 		B169A59D1C865675000A2111 /* SambaTechMoviedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A59C1C865675000A2111 /* SambaTechMoviedTests.swift */; };
 		B169A5A81C865675000A2111 /* SambaTechMoviedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5A71C865675000A2111 /* SambaTechMoviedUITests.swift */; };
+		B169A5BF1C866A35000A2111 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5BE1C866A35000A2111 /* Settings.swift */; };
+		B169A5C11C866B81000A2111 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5C01C866B81000A2111 /* Images.swift */; };
+		B169A5C51C866F3A000A2111 /* TOMovieLIst.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5C41C866F3A000A2111 /* TOMovieLIst.swift */; };
+		B169A5C71C867022000A2111 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5C61C867022000A2111 /* Movie.swift */; };
+		B169A5C91C8673A7000A2111 /* DetailMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5C81C8673A7000A2111 /* DetailMovie.swift */; };
+		B169A5CB1C867832000A2111 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5CA1C867832000A2111 /* Genre.swift */; };
+		B169A5CD1C867901000A2111 /* ProductionCompanie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5CC1C867901000A2111 /* ProductionCompanie.swift */; };
+		B169A5CF1C8679A2000A2111 /* ProductionCountrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5CE1C8679A2000A2111 /* ProductionCountrie.swift */; };
+		B169A5D11C867A64000A2111 /* SpokenLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5D01C867A64000A2111 /* SpokenLanguage.swift */; };
 		DD3F948A1708A9724C3260DA /* Pods_SambaTechMovied.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076BFC11FE3509B3C484B4FD /* Pods_SambaTechMovied.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +60,15 @@
 		B169A5A31C865675000A2111 /* SambaTechMoviedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SambaTechMoviedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B169A5A71C865675000A2111 /* SambaTechMoviedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SambaTechMoviedUITests.swift; sourceTree = "<group>"; };
 		B169A5A91C865675000A2111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B169A5BE1C866A35000A2111 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B169A5C01C866B81000A2111 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		B169A5C41C866F3A000A2111 /* TOMovieLIst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOMovieLIst.swift; sourceTree = "<group>"; };
+		B169A5C61C867022000A2111 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B169A5C81C8673A7000A2111 /* DetailMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMovie.swift; sourceTree = "<group>"; };
+		B169A5CA1C867832000A2111 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		B169A5CC1C867901000A2111 /* ProductionCompanie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionCompanie.swift; sourceTree = "<group>"; };
+		B169A5CE1C8679A2000A2111 /* ProductionCountrie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionCountrie.swift; sourceTree = "<group>"; };
+		B169A5D01C867A64000A2111 /* SpokenLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpokenLanguage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +140,16 @@
 			isa = PBXGroup;
 			children = (
 				B169A5871C865672000A2111 /* AppDelegate.swift */,
-				B169A5891C865672000A2111 /* ViewController.swift */,
-				B169A58B1C865672000A2111 /* Main.storyboard */,
 				B169A58E1C865672000A2111 /* Assets.xcassets */,
-				B169A5901C865672000A2111 /* LaunchScreen.storyboard */,
+				B169A5B51C866804000A2111 /* Constants */,
 				B169A5931C865672000A2111 /* Info.plist */,
+				B169A5B61C866818000A2111 /* Model */,
+				B169A5B71C866818000A2111 /* Storyboard */,
+				B169A5B81C866818000A2111 /* TOModel */,
+				B169A5B91C866818000A2111 /* Util */,
+				B169A5891C865672000A2111 /* ViewController.swift */,
+				B169A5BA1C866818000A2111 /* ViewControllers */,
+				B169A5BD1C866818000A2111 /* WS */,
 			);
 			path = SambaTechMovied;
 			sourceTree = "<group>";
@@ -147,6 +170,82 @@
 				B169A5A91C865675000A2111 /* Info.plist */,
 			);
 			path = SambaTechMoviedUITests;
+			sourceTree = "<group>";
+		};
+		B169A5B51C866804000A2111 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B169A5B61C866818000A2111 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B169A5C81C8673A7000A2111 /* DetailMovie.swift */,
+				B169A5CA1C867832000A2111 /* Genre.swift */,
+				B169A5C01C866B81000A2111 /* Images.swift */,
+				B169A5C61C867022000A2111 /* Movie.swift */,
+				B169A5CC1C867901000A2111 /* ProductionCompanie.swift */,
+				B169A5CE1C8679A2000A2111 /* ProductionCountrie.swift */,
+				B169A5BE1C866A35000A2111 /* Settings.swift */,
+				B169A5D01C867A64000A2111 /* SpokenLanguage.swift */,
+				B169A5C41C866F3A000A2111 /* TOMovieLIst.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B169A5B71C866818000A2111 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B169A5901C865672000A2111 /* LaunchScreen.storyboard */,
+				B169A58B1C865672000A2111 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B169A5B81C866818000A2111 /* TOModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TOModel;
+			sourceTree = "<group>";
+		};
+		B169A5B91C866818000A2111 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		B169A5BA1C866818000A2111 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B169A5BB1C866818000A2111 /* Cells */,
+				B169A5BC1C866818000A2111 /* TableViews */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B169A5BB1C866818000A2111 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B169A5BC1C866818000A2111 /* TableViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViews;
+			sourceTree = "<group>";
+		};
+		B169A5BD1C866818000A2111 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +430,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B169A5D11C867A64000A2111 /* SpokenLanguage.swift in Sources */,
+				B169A5BF1C866A35000A2111 /* Settings.swift in Sources */,
+				B169A5C11C866B81000A2111 /* Images.swift in Sources */,
+				B169A5C91C8673A7000A2111 /* DetailMovie.swift in Sources */,
+				B169A5C71C867022000A2111 /* Movie.swift in Sources */,
+				B169A5C51C866F3A000A2111 /* TOMovieLIst.swift in Sources */,
+				B169A5CD1C867901000A2111 /* ProductionCompanie.swift in Sources */,
 				B169A58A1C865672000A2111 /* ViewController.swift in Sources */,
+				B169A5CF1C8679A2000A2111 /* ProductionCountrie.swift in Sources */,
 				B169A5881C865672000A2111 /* AppDelegate.swift in Sources */,
+				B169A5CB1C867832000A2111 /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +482,7 @@
 				B169A58C1C865672000A2111 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B169A5901C865672000A2111 /* LaunchScreen.storyboard */ = {
@@ -382,6 +491,7 @@
 				B169A5911C865672000A2111 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
