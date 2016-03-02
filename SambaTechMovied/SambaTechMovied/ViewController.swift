@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        getUsers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +22,17 @@ class ViewController: UIViewController {
     }
 
 
+    func getUsers() {
+        
+            RestClient.getUsers() { result in
+//                self.utilViewController.hideActivityIndicator()
+                if result.result.isFailure {
+//                    self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
+                } else {
+                    let users = result.result.value
+//                    self.tableView.reloadData()
+                }
+            }
+        }
 }
 
