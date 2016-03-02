@@ -29,7 +29,9 @@ class ViewController: UIViewController {
                 if result.result.isFailure {
 //                    self.utilViewController.showMessage(self, message:"An error occurred. Please try again :(")
                 } else {
-                    let users = result.result.value
+                    var users = TOMovieLIst()
+                    users = result.result.value! as TOMovieLIst
+
 //                    self.tableView.reloadData()
                 }
             }
