@@ -15,8 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        setsBackgroundOfColorButtonNavigationBar()
+        setsBackgroundOfColorNavigationBar()
+        setsStyleTitleNavigationBar()
         return true
+    }
+    
+    //MARK: - BackgroundOfColorNavigationBar
+    func setsBackgroundOfColorNavigationBar() {
+        UINavigationBar.appearance().barTintColor = UtilColors.colorNavigationBar()
+    }
+    
+    func setsBackgroundOfColorButtonNavigationBar() {
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+//        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "back")
+       // UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "back")
+    }
+    
+    func setsStyleTitleNavigationBar(){
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UtilColors.ColorWrite(), NSFontAttributeName:UtilFont.fontNavigationBarTitle()]
     }
 
     func applicationWillResignActive(application: UIApplication) {

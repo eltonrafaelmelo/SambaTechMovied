@@ -16,6 +16,9 @@
 		B120CBD41C879DD40051A42B /* FactoryStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBD31C879DD40051A42B /* FactoryStoryboard.swift */; };
 		B120CBD61C87A1980051A42B /* DetailMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBD51C87A1980051A42B /* DetailMovieViewController.swift */; };
 		B120CBD81C87C8AF0051A42B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBD71C87C8AF0051A42B /* Util.swift */; };
+		B120CBDC1C87D6A50051A42B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBD91C87D6A50051A42B /* UIColor+Hex.swift */; };
+		B120CBDD1C87D6A50051A42B /* UtilColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBDA1C87D6A50051A42B /* UtilColors.swift */; };
+		B120CBDE1C87D6A50051A42B /* UtilFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBDB1C87D6A50051A42B /* UtilFont.swift */; };
 		B169A5881C865672000A2111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5871C865672000A2111 /* AppDelegate.swift */; };
 		B169A58A1C865672000A2111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5891C865672000A2111 /* ViewController.swift */; };
 		B169A58F1C865672000A2111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B169A58E1C865672000A2111 /* Assets.xcassets */; };
@@ -58,12 +61,14 @@
 		8131EE811C870338000EADD2 /* Movie.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Movie.storyboard; path = SambaTechMovied/ViewControllers/Movie.storyboard; sourceTree = SOURCE_ROOT; };
 		B120CBC81C8791EA0051A42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SambaTechMovied/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		B120CBCA1C8791EA0051A42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SambaTechMovied/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		B120CBCE1C8793AF0051A42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = SambaTechMovied/Base.lproj/MovieCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B120CBCF1C8797480051A42B /* cellCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = cellCategory.swift; path = SambaTechMovied/cellCategory.swift; sourceTree = SOURCE_ROOT; };
 		B120CBD11C879D2B0051A42B /* DetailMovieTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailMovieTableViewController.swift; path = imagens/DetailMovieTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		B120CBD31C879DD40051A42B /* FactoryStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FactoryStoryboard.swift; path = imagens/FactoryStoryboard.swift; sourceTree = SOURCE_ROOT; };
 		B120CBD51C87A1980051A42B /* DetailMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMovieViewController.swift; sourceTree = "<group>"; };
 		B120CBD71C87C8AF0051A42B /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = SambaTechMovied/ViewControllers/Util.swift; sourceTree = SOURCE_ROOT; };
+		B120CBD91C87D6A50051A42B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "SambaTechMovied/UIColor+Hex.swift"; sourceTree = SOURCE_ROOT; };
+		B120CBDA1C87D6A50051A42B /* UtilColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilColors.swift; path = SambaTechMovied/UtilColors.swift; sourceTree = SOURCE_ROOT; };
+		B120CBDB1C87D6A50051A42B /* UtilFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilFont.swift; path = SambaTechMovied/UtilFont.swift; sourceTree = SOURCE_ROOT; };
 		B169A5841C865672000A2111 /* SambaTechMovied.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SambaTechMovied.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B169A5871C865672000A2111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B169A5891C865672000A2111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +165,6 @@
 				B169A5931C865672000A2111 /* Info.plist */,
 				B169A5B61C866818000A2111 /* Model */,
 				B169A5B71C866818000A2111 /* Storyboard */,
-				B169A5B81C866818000A2111 /* TOModel */,
 				B169A5B91C866818000A2111 /* Util */,
 				B169A5891C865672000A2111 /* ViewController.swift */,
 				B169A5BA1C866818000A2111 /* ViewControllers */,
@@ -221,16 +225,12 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		B169A5B81C866818000A2111 /* TOModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TOModel;
-			sourceTree = "<group>";
-		};
 		B169A5B91C866818000A2111 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B120CBD91C87D6A50051A42B /* UIColor+Hex.swift */,
+				B120CBDA1C87D6A50051A42B /* UtilColors.swift */,
+				B120CBDB1C87D6A50051A42B /* UtilFont.swift */,
 				B120CBD71C87C8AF0051A42B /* Util.swift */,
 			);
 			path = Util;
@@ -250,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				B120CBCF1C8797480051A42B /* cellCategory.swift */,
-				B120CBCD1C8793AF0051A42B /* MovieCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -458,15 +457,18 @@
 				B169A5D11C867A64000A2111 /* SpokenLanguage.swift in Sources */,
 				B169A5BF1C866A35000A2111 /* Settings.swift in Sources */,
 				B169A5C11C866B81000A2111 /* Images.swift in Sources */,
+				B120CBDC1C87D6A50051A42B /* UIColor+Hex.swift in Sources */,
 				B169A5C91C8673A7000A2111 /* DetailMovie.swift in Sources */,
 				B169A5C71C867022000A2111 /* Movie.swift in Sources */,
 				B120CBD01C8797480051A42B /* cellCategory.swift in Sources */,
 				B120CBD81C87C8AF0051A42B /* Util.swift in Sources */,
 				B169A5C51C866F3A000A2111 /* TOMovieLIst.swift in Sources */,
 				B169A5CD1C867901000A2111 /* ProductionCompanie.swift in Sources */,
+				B120CBDD1C87D6A50051A42B /* UtilColors.swift in Sources */,
 				B169A58A1C865672000A2111 /* ViewController.swift in Sources */,
 				8131EE801C86FE0B000EADD2 /* RestMovie.swift in Sources */,
 				B169A5CF1C8679A2000A2111 /* ProductionCountrie.swift in Sources */,
+				B120CBDE1C87D6A50051A42B /* UtilFont.swift in Sources */,
 				B120CBD41C879DD40051A42B /* FactoryStoryboard.swift in Sources */,
 				B120CBD61C87A1980051A42B /* DetailMovieViewController.swift in Sources */,
 				B169A5881C865672000A2111 /* AppDelegate.swift in Sources */,
@@ -521,14 +523,6 @@
 				B120CBCA1C8791EA0051A42B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B120CBCD1C8793AF0051A42B /* MovieCollectionViewCell.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B120CBCE1C8793AF0051A42B /* Base */,
-			);
-			name = MovieCollectionViewCell.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collectionMovie: UICollectionView!
     var toListMovie = TOMovieLIst()
     var util = Util.sharedInstance
+    var list = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -49,6 +49,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 self.toListMovie = movie!
                 
+                let listT = self.toListMovie.results
+                
+                //MAIS POPULAR
+//                self.list = listT.sort({$0.popularity < $1.popularity})
+                
+                //MELHO VOTADO
+                self.list = listT.sort({$0.voteAverage > $1.voteAverage})
+                
                 self.reloadCollection()
               
             }
@@ -64,24 +72,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-                let movie = toListMovie.results[indexPath.row]
+                let movie = list[indexPath.row]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MovieCollectionViewCell", forIndexPath: indexPath) as! cellCategory
                 cell.receiveCategory(movie)
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return toListMovie.results.count
+        return list.count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let movie = toListMovie.results[indexPath.row]
+        let movie = list[indexPath.row]
         getDetailMovie(movie.idMovie)
-    }
-    
-    func jsonString(){
-        var text:String = "This is some text " +
-        "over multiple lines"
     }
     
     func callScreenDetail(detailMovie :DetailMovie){

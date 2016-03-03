@@ -23,7 +23,10 @@ class DetailMovieViewController: UIViewController {
     var indicatoOfActivity:UIActivityIndicatorView?
     var util = Util.sharedInstance
     
+    @IBOutlet weak var labelTitleIdioma: UILabel!
     @IBOutlet weak var labelLanguages: UILabel!
+    @IBOutlet weak var labelTitleGenero: UILabel!
+    @IBOutlet weak var labelTitleResumo: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,18 @@ class DetailMovieViewController: UIViewController {
         labelDescri.text = detailMovie.overview
         labelGenero.text = util.genresMovie(detailMovie.genres)
         labelLanguages.text = util.returnlanguages(detailMovie.spokenLanguages)
+        
+        labelAno.font = UtilFont.fontTextNormal()
+        labelRun.font = UtilFont.fontTextNormal()
+        labelMinutos.font = UtilFont.fontTextNormal()
+        labelDescri.font = UtilFont.fontTextNormal()
+        labelGenero.font = UtilFont.fontTextNormal()
+        labelLanguages.font = UtilFont.fontTextNormal()
+        labelTitleGenero.font = UtilFont.fontTextNormal()
+        labelTitleIdioma.font = UtilFont.fontTextNormal()
+        labelTitleResumo.font = UtilFont.fontTextNormal()
+
+
     }
     
     //MARK: - Activity Indicator
