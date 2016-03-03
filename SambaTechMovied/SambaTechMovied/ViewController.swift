@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ActionSheetPicker_3_0
+
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -14,10 +16,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var toListMovie = TOMovieLIst()
     var util = Util.sharedInstance
     var list = [Movie]()
+    let listFiltro = ["Mais populares", "Melhor avaliado"]
+
+    
+    @IBOutlet var buttonFiltro: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "SambaTech"
+        self.navigationItem.rightBarButtonItem = buttonFiltro
+
         collectionMovie.delegate = self
         collectionMovie.dataSource = self
     }
@@ -32,6 +40,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func touchButtonFiltro(sender: AnyObject) {
+        ActionSheetStringPicker.showPickerWithTitle("Ordenar", rows: self.listFiltro, initialSelection: 0, doneBlock: {
+            picker, index, value in
+            
+            self.filtroFilmes(value as! String)
+            
+            return
+            }, cancelBlock: { ActionStringCancelBlock in return }, origin: sender)
+    }
+    
+    func filtroFilmes(filtro :String) {
+        
+        let listT = self.toListMovie.results
+
+        if filtro == "Mais populares" {
+            self.list = listT.sort({$0.popularity < $1.popularity})
+
+        } else {
+            
+            self.list = listT.sort({$0.voteAverage > $1.voteAverage})
+
+        }
+        
+        self.reloadCollection()
+
+    }
     
     func getUsers() {
         

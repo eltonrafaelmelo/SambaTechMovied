@@ -7,6 +7,8 @@ target 'SambaTechMovied' do
     pod 'AlamofireObjectMapper', '~> 1.1.0'
     pod 'SwiftLoader'
     pod 'KFSwiftImageLoader'
+    pod 'ActionSheetPicker-3.0', '~> 2.0.4'
+
 end
 
 target 'SambaTechMoviedTests' do
