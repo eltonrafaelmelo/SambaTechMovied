@@ -86,10 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SambaTechMovied/Alamofire.framework"
   install_framework "Pods-SambaTechMovied/AlamofireObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/KFSwiftImageLoader.framework"
   install_framework "Pods-SambaTechMovied/ObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/SwiftLoader.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SambaTechMovied/Alamofire.framework"
   install_framework "Pods-SambaTechMovied/AlamofireObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/KFSwiftImageLoader.framework"
   install_framework "Pods-SambaTechMovied/ObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/SwiftLoader.framework"
 fi

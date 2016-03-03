@@ -6,7 +6,7 @@
 //  Copyright © 2016 SambaTech. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import ObjectMapper
 
 class Genre: Mappable {

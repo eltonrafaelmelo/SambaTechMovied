@@ -6,7 +6,7 @@
 //  Copyright © 2016 SambaTech. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import ObjectMapper
 
 
@@ -17,7 +17,7 @@ class TOMovieLIst: Mappable {
     var totalResults = 0
     var totalPages   = 0
     
-    required convenience init?(_ map: Map) {
+    required  convenience init?(_ map: Map) {
         self.init()
     }
     

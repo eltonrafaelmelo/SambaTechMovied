@@ -3,29 +3,8 @@
 //  ObjectMapper
 //
 //  Created by Tristan Himmelman on 2015-10-09.
+//  Copyright © 2015 hearst. All rights reserved.
 //
-//  The MIT License (MIT)
-//
-//  Copyright (c) 2014-2015 Hearst
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
-
 
 import Foundation
 
@@ -33,28 +12,24 @@ import Foundation
 public final class Map {
 	public let mappingType: MappingType
 	
-	public internal(set) var JSONDictionary: [String : AnyObject] = [:]
-	public var currentValue: AnyObject?
+	var JSONDictionary: [String : AnyObject] = [:]
+	var currentValue: AnyObject?
 	var currentKey: String?
 	var keyIsNested = false
-
-	let toObject: Bool // indicates whether the mapping is being applied to an existing object
 	
 	/// Counter for failing cases of deserializing values to `let` properties.
 	private var failedCount: Int = 0
 	
-	public init(mappingType: MappingType, JSONDictionary: [String : AnyObject], toObject: Bool = false) {
+	public init(mappingType: MappingType, JSONDictionary: [String : AnyObject]) {
 		self.mappingType = mappingType
 		self.JSONDictionary = JSONDictionary
-		self.toObject = toObject
 	}
 	
 	/// Sets the current mapper value and key.
 	/// The Key paramater can be a period separated string (ex. "distance.value") to access sub objects.
 	public subscript(key: String) -> Map {
 		// save key and value associated to it
-		let nested = key.containsString(".")
-		return self[key, nested: nested]
+		return self[key, nested: true]
 	}
 	
 	public subscript(key: String, nested nested: Bool) -> Map {
@@ -105,50 +80,17 @@ public final class Map {
 	}
 }
 
-/// Fetch value from JSON dictionary, loop through keyPathComponents until we reach the desired object
-private func valueFor(keyPathComponents: ArraySlice<String>, dictionary: [String: AnyObject]) -> AnyObject? {
-	// Implement it as a tail recursive function.
-	if keyPathComponents.isEmpty {
-		return nil
-	}
-	
-	if let keyPath = keyPathComponents.first {
-		let object = dictionary[keyPath]
-		if object is NSNull {
-			return nil
-		} else if let dict = object as? [String : AnyObject] where keyPathComponents.count > 1 {
-			let tail = keyPathComponents.dropFirst()
-			return valueFor(tail, dictionary: dict)
-		} else if let array = object as? [AnyObject] where keyPathComponents.count > 1 {
-			let tail = keyPathComponents.dropFirst()
-			return valueFor(tail, dictionary: array)
-		} else {
-			return object
-		}
-	}
-	
-	return nil
-}
-
-/// Fetch value from JSON Array, loop through keyPathComponents them until we reach the desired object
-private func valueFor(keyPathComponents: ArraySlice<String>, dictionary: [AnyObject]) -> AnyObject? {
+/// Fetch value from JSON dictionary, loop through them until we reach the desired object.
+private func valueFor(keyPathComponents: ArraySlice<String>, dictionary: [String : AnyObject]) -> AnyObject? {
 	// Implement it as a tail recursive function.
 	
 	if keyPathComponents.isEmpty {
 		return nil
 	}
 	
-	//Try to convert keypath to Int as index
-	if let keyPath = keyPathComponents.first,
-		let index = Int(keyPath) where index >= 0 && index < dictionary.count {
-
-		let object = dictionary[index]
-		
+	if let object: AnyObject = dictionary[keyPathComponents.first!] {
 		if object is NSNull {
 			return nil
-		} else if let array = object as? [AnyObject] where keyPathComponents.count > 1 {
-			let tail = keyPathComponents.dropFirst()
-			return valueFor(tail, dictionary: array)
 		} else if let dict = object as? [String : AnyObject] where keyPathComponents.count > 1 {
 			let tail = keyPathComponents.dropFirst()
 			return valueFor(tail, dictionary: dict)

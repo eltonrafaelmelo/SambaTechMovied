@@ -6,7 +6,7 @@
 //  Copyright © 2016 SambaTech. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import ObjectMapper
 
 class Movie: Mappable {
@@ -26,7 +26,7 @@ class Movie: Mappable {
      var video            = false
      var voteAverage      = 0.0
     
-    required convenience init?(_ map: Map) {
+    required  convenience init?(_ map: Map) {
         self.init()
     }
     
