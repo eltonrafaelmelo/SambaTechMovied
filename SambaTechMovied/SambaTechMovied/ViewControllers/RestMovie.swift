@@ -6,28 +6,30 @@ import AlamofireObjectMapper
 
 class RestClient {
     
-    class func getListMovie(completionHandler: (result: Response<TOMovieLIst, NSError>) -> Void ){
-        let url = "http://api.themoviedb.org/3/discover/movie?api_key=a573db5e752a82b043ab78deb9ab2a2b&sort_by=popularity.desc"
-//        Alamofire.request(.GET, url, parameters: nil)
-//            .responseObject() { (response: Response<TOMovieLIst, NSError>) in
-//                completionHandler(result: response)
-//        }
+    class func getListMovie(completionHandler: (movie: TOMovieLIst?, error: ErrorType?) -> () ){
+
+        let urlFinal = "http://api.themoviedb.org/3/discover/movie?api_key=a573db5e752a82b043ab78deb9ab2a2b&sort_by=popularity.desc"
+        Alamofire.request(.GET, urlFinal, parameters: nil)
+            .responseObject { (response: TOMovieLIst?, error: ErrorType?) in
+                completionHandler(movie: response as TOMovieLIst?, error: error)
+        }
     }
     
-    class func getDetailMovie(completionHandler: (result: Response<Movie, NSError>) -> Void ){
-        let url = "https://api.themoviedb.org/3/movie/550?api_key=a573db5e752a82b043ab78deb9ab2a2b"
-//        Alamofire.request(.GET, url, parameters: nil)
-//            .responseObject() { (response: Response<Movie, NSError>) in
-//                completionHandler(result: response)
-//        }
+    class func getDetailMovie(codMovie :Int, completionHandler: (movie: DetailMovie?, error: ErrorType?) -> () ){
+
+        let urlFinal = "https://api.themoviedb.org/3/movie/\(codMovie)?api_key=a573db5e752a82b043ab78deb9ab2a2b"
+        Alamofire.request(.GET, urlFinal, parameters: nil)
+            .responseObject { (response: DetailMovie?, error: ErrorType?) in
+                completionHandler(movie: response as DetailMovie?, error: error)
+        }
     }
     
-    class func getSetting(completionHandler: (result: Response<Settings, NSError>) -> Void ){
-        let url = "http://api.themoviedb.org/3/configuration?api_key=a573db5e752a82b043ab78deb9ab2a2b"
-//        Alamofire.request(.GET, url, parameters: nil)
-//            .responseObject() { (response: Response<Settings, NSError>) in
-//                completionHandler(result: response)
-//        }
+    class func getSetting(completionHandler: (movie: Settings?, error: ErrorType?) -> () ){
+        let urlFinal = "http://api.themoviedb.org/3/configuration?api_key=a573db5e752a82b043ab78deb9ab2a2b"
+        Alamofire.request(.GET, urlFinal, parameters: nil)
+            .responseObject { (response: Settings?, error: ErrorType?) in
+                completionHandler(movie: response as Settings?, error: error)
+        }
     }
     
     class func getMovie(completionHandler: (movie: TOMovieLIst?, error: ErrorType?) -> () ){

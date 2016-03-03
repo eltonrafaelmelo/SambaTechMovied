@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collectionMovie: UICollectionView!
     var toListMovie = TOMovieLIst()
+    var util = Util.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,29 +35,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func getUsers() {
         
+        util.showActivityIndicator()
+        
         RestClient.getMovie() {movie, error in
             
-//            UtilViewController.hideActivityIndicator()
+            self.util.hideActivityIndicator()
             
             if let _ = error {
                 
-//                UtilViewController.showMessage(self, message: "ERROR_OCCURED".localizedWithComment("Um erro ocorreu. Por favor tente novamente :("))
+                self.util.showMessage(self, message: "\(error)")
                 
             } else {
                 
                 self.toListMovie = movie!
                 
                 self.reloadCollection()
-                
-//                if movie?.response == Constants.Model.MOVIE_RESPONSE_ERROR {
-//                    
-//                    UtilViewController.showMessage(self, message: movie!.error)
-//                    
-//                }else{
-//                    
-//                    self.callScreenDetail(movie!)
-//                    
-//                }
+              
             }
         }
     }
@@ -72,7 +66,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
                 let movie = toListMovie.results[indexPath.row]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MovieCollectionViewCell", forIndexPath: indexPath) as! cellCategory
-        //        cell.backgroundColor = UIColor.whiteColor()
                 cell.receiveCategory(movie)
         return cell
     }
@@ -82,7 +75,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        callScreenDetail()
+        let movie = toListMovie.results[indexPath.row]
+        getDetailMovie(movie.idMovie)
     }
     
     func jsonString(){
@@ -90,11 +84,32 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         "over multiple lines"
     }
     
-    func callScreenDetail(){
+    func callScreenDetail(detailMovie :DetailMovie){
         
         let screen = FactoryStoryboard.storyboardMovie().instantiateViewControllerWithIdentifier("detail") as! DetailMovieViewController
+        screen.detailMovie = detailMovie
         
         navigationController?.pushViewController(screen, animated: true)
+    }
+    
+    func getDetailMovie(codMovie :Int){
+        
+        util.showActivityIndicator()
+
+        RestClient.getDetailMovie(codMovie) {movie, error in
+            
+            self.util.hideActivityIndicator()
+
+            if let _ = error {
+                
+                self.util.showMessage(self, message: "\(error)")
+                
+            } else {
+                
+                self.callScreenDetail(movie!)
+                
+            }
+        }
     }
 }
 

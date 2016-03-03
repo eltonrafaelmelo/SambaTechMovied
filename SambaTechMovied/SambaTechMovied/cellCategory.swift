@@ -33,22 +33,8 @@ class cellCategory: UICollectionViewCell {
                 NSLog("\(error)")
             }
         }
-        //
-//        getDataFromUrl(url!) { data in
-//            dispatch_async(dispatch_get_main_queue()) {
-//                self.imageMovie.image = UIImage(data: data!)
-//                self.hideActivityIndicator()
-//            }
-//
-//        }
 
     }
-    
-//    func getDataFromUrl(urL:NSURL, completion: ((data: NSData?) -> Void)) {
-//        NSURLSession.sharedSession().dataTaskWithURL(urL) { (data, response, error) in
-//            completion(data: data)
-//            }.resume()
-//    }
     
     func receiveCategory (movie: Movie){
         self.movieReceive = movie
