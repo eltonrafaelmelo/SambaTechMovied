@@ -1,3 +1,7 @@
+//  SambaTechMovied
+//
+//  Created by Elton Melo on 03/03/16.
+//  Copyright © 2016 SambaTech. All rights reserved.
 
 import UIKit
 

@@ -21,7 +21,6 @@ class cellCategory: UICollectionViewCell {
         showActivityIndicator()
         
         let urlImage = "http://image.tmdb.org/t/p/w500\(movieReceive.posterPath)"
-//        let url = NSURL(string: urlImage)
         
         self.showActivityIndicator()
         
