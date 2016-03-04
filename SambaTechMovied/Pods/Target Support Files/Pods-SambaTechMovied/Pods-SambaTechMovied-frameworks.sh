@@ -87,15 +87,19 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SambaTechMovied/ActionSheetPicker_3_0.framework"
   install_framework "Pods-SambaTechMovied/Alamofire.framework"
   install_framework "Pods-SambaTechMovied/AlamofireObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/JLToast.framework"
   install_framework "Pods-SambaTechMovied/KFSwiftImageLoader.framework"
   install_framework "Pods-SambaTechMovied/ObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/ReachabilitySwift.framework"
   install_framework "Pods-SambaTechMovied/SwiftLoader.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SambaTechMovied/ActionSheetPicker_3_0.framework"
   install_framework "Pods-SambaTechMovied/Alamofire.framework"
   install_framework "Pods-SambaTechMovied/AlamofireObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/JLToast.framework"
   install_framework "Pods-SambaTechMovied/KFSwiftImageLoader.framework"
   install_framework "Pods-SambaTechMovied/ObjectMapper.framework"
+  install_framework "Pods-SambaTechMovied/ReachabilitySwift.framework"
   install_framework "Pods-SambaTechMovied/SwiftLoader.framework"
 fi

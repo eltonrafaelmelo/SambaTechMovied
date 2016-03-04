@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import JLToast
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        configureToast()
         setsBackgroundOfColorButtonNavigationBar()
         setsBackgroundOfColorNavigationBar()
         setsStyleTitleNavigationBar()
@@ -28,12 +31,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setsBackgroundOfColorButtonNavigationBar() {
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-//        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "back")
-       // UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "back")
     }
     
     func setsStyleTitleNavigationBar(){
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UtilColors.ColorWrite(), NSFontAttributeName:UtilFont.fontNavigationBarTitle()]
+    }
+    
+    func configureToast(){
+        JLToastView.setDefaultValue(
+            120,
+            forAttributeName: JLToastViewPortraitOffsetYAttributeName,
+            userInterfaceIdiom: .Phone
+        )
     }
 
     func applicationWillResignActive(application: UIApplication) {

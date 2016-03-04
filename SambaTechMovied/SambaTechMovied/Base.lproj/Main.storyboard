@@ -75,10 +75,16 @@
                     <navigationItem key="navigationItem" id="E5c-pG-Of3"/>
                     <connections>
                         <outlet property="buttonFiltro" destination="ThP-VV-oLO" id="I9G-1q-luO"/>
+                        <outlet property="buttonUpdate" destination="1Wg-XD-Eyr" id="RPy-YB-faz"/>
                         <outlet property="collectionMovie" destination="2jI-Bj-VrS" id="gZZ-qA-VT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <barButtonItem image="Updates" id="1Wg-XD-Eyr" userLabel="Button update">
+                    <connections>
+                        <action selector="touchButtonUpdate:" destination="BYZ-38-t0r" id="rXX-gB-N9C"/>
+                    </connections>
+                </barButtonItem>
                 <barButtonItem image="filtro" id="ThP-VV-oLO">
                     <connections>
                         <action selector="touchButtonFiltro:" destination="BYZ-38-t0r" id="F7Y-h7-f2h"/>
@@ -90,6 +96,7 @@
     </scenes>
     <resources>
         <image name="Movie-100" width="100" height="100"/>
+        <image name="Updates" width="25" height="25"/>
         <image name="filtro" width="25" height="25"/>
     </resources>
 </document>

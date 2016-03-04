@@ -32,14 +32,13 @@ class RestClient {
         }
     }
     
-    class func getMovie(completionHandler: (movie: TOMovieLIst?, error: ErrorType?) -> () ){
+    class func getTrailer(codMovie :Int, completionHandler: (toTrailer: TOTrailer?, error: ErrorType?) -> () ){
         
-        let urlFinal = "http://api.themoviedb.org/3/discover/movie?api_key=a573db5e752a82b043ab78deb9ab2a2b&sort_by=popularity.desc"
-        
+        let urlFinal = "http://api.themoviedb.org/3/movie/\(codMovie)/videos?api_key=a573db5e752a82b043ab78deb9ab2a2b"
         
         Alamofire.request(.GET, urlFinal, parameters: nil)
-            .responseObject { (response: TOMovieLIst?, error: ErrorType?) in
-                completionHandler(movie: response as TOMovieLIst?, error: error)
+            .responseObject { (response: TOTrailer?, error: ErrorType?) in
+                completionHandler(toTrailer: response as TOTrailer?, error: error)
         }
     }
     

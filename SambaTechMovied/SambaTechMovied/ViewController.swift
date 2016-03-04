@@ -8,7 +8,7 @@
 
 import UIKit
 import ActionSheetPicker_3_0
-
+import JLToast
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -17,14 +17,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var util = Util.sharedInstance
     var list = [Movie]()
     let listFiltro = ["Mais populares", "Melhor avaliado"]
-
+    var filter = "Mais populares"
     
     @IBOutlet var buttonFiltro: UIBarButtonItem!
+    @IBOutlet var buttonUpdate: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "SambaTech"
-        self.navigationItem.rightBarButtonItem = buttonFiltro
+        self.navigationItem.rightBarButtonItems = [buttonFiltro, buttonUpdate]
 
         collectionMovie.delegate = self
         collectionMovie.dataSource = self
@@ -32,12 +33,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        getUsers()
+        getMovie()
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func touchButtonUpdate(sender: AnyObject) {
+        
+        if UtilNetwork.isNetworkAvailable() {
+            
+            getMovie()
+
+        } else {
+            
+            JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
+
+        }
+
     }
     
     @IBAction func touchButtonFiltro(sender: AnyObject) {
@@ -52,9 +67,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func filtroFilmes(filtro :String) {
         
+        filter = filtro
+        
         let listT = self.toListMovie.results
+        
+        util.showActivityIndicator()
 
-        if filtro == "Mais populares" {
+        if filter == "Mais populares" {
             self.list = listT.sort({$0.popularity < $1.popularity})
 
         } else {
@@ -63,38 +82,53 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         }
         
+        self.util.hideActivityIndicator()
+
         self.reloadCollection()
 
     }
     
-    func getUsers() {
+    func getMovie() {
         
-        util.showActivityIndicator()
-        
-        RestClient.getMovie() {movie, error in
+        if UtilNetwork.isNetworkAvailable() {
             
-            self.util.hideActivityIndicator()
+            util.showActivityIndicator()
             
-            if let _ = error {
+            RestClient.getListMovie() {movie, error in
                 
-                self.util.showMessage(self, message: "\(error)")
+                self.util.hideActivityIndicator()
                 
-            } else {
-                
-                self.toListMovie = movie!
-                
-                let listT = self.toListMovie.results
-                
-                //MAIS POPULAR
-//                self.list = listT.sort({$0.popularity < $1.popularity})
-                
-                //MELHO VOTADO
-                self.list = listT.sort({$0.voteAverage > $1.voteAverage})
-                
-                self.reloadCollection()
-              
+                if let _ = error {
+                    
+                    self.util.showMessage(self, message: "\(error)")
+                    
+                } else {
+                    
+                    self.toListMovie = movie!
+                    
+                    let listT = self.toListMovie.results
+                    
+                    if self.filter == "Mais populares" {
+                        self.list = listT.sort({$0.popularity < $1.popularity})
+                        
+                    } else {
+                        
+                        self.list = listT.sort({$0.voteAverage > $1.voteAverage})
+                        
+                    }
+                    
+                    self.reloadCollection()
+                    
+                }
             }
+            
+        } else {
+            
+            JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
+
         }
+        
+       
     }
     
     func reloadCollection(){
@@ -131,22 +165,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func getDetailMovie(codMovie :Int){
         
-        util.showActivityIndicator()
-
-        RestClient.getDetailMovie(codMovie) {movie, error in
+        if UtilNetwork.isNetworkAvailable() {
             
-            self.util.hideActivityIndicator()
-
-            if let _ = error {
+            util.showActivityIndicator()
+            
+            RestClient.getDetailMovie(codMovie) {movie, error in
                 
-                self.util.showMessage(self, message: "\(error)")
+                self.util.hideActivityIndicator()
                 
-            } else {
-                
-                self.callScreenDetail(movie!)
-                
+                if let _ = error {
+                    
+                    self.util.showMessage(self, message: "\(error)")
+                    
+                } else {
+                    
+                    self.callScreenDetail(movie!)
+                    
+                }
             }
+            
+        } else {
+            
+            JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
+
         }
+       
     }
+    
+    
 }
 

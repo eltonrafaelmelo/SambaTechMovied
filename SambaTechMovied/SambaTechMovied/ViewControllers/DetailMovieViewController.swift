@@ -8,12 +8,22 @@
 
 import UIKit
 import KFSwiftImageLoader
+//
+//  ViewController.swift
+//  SambaTechMovied
+//
+//  Created by Elton Melo on 01/03/16.
+//  Copyright © 2016 SambaTech. All rights reserved.
+//
 
+import UIKit
+import ActionSheetPicker_3_0
+import JLToast
 
 class DetailMovieViewController: UIViewController {
     
     var detailMovie = DetailMovie()
-
+    
     @IBOutlet weak var labelRun: UILabel!
     @IBOutlet weak var labelAno: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -27,16 +37,20 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var labelLanguages: UILabel!
     @IBOutlet weak var labelTitleGenero: UILabel!
     @IBOutlet weak var labelTitleResumo: UILabel!
+    var trailerTable = TrailerTableViewController()
+    var toTrailer = TOTrailer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = detailMovie.title
+        
+        getTrailher()
         
         setValueInfo()
         
         let urlImage = "http://image.tmdb.org/t/p/w500\(detailMovie.posterPath)"
-
+        
         image.loadImageFromURLString(urlImage, placeholderImage: UIImage(named: "KiavashFaisali")) {
             (finished, error) in
             self.hideActivityIndicator()
@@ -45,7 +59,7 @@ class DetailMovieViewController: UIViewController {
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,8 +82,8 @@ class DetailMovieViewController: UIViewController {
         labelTitleGenero.font = UtilFont.fontTextNormal()
         labelTitleIdioma.font = UtilFont.fontTextNormal()
         labelTitleResumo.font = UtilFont.fontTextNormal()
-
-
+        
+        
     }
     
     //MARK: - Activity Indicator
@@ -88,15 +102,60 @@ class DetailMovieViewController: UIViewController {
         self.indicatoOfActivity = nil
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func getTrailher() {
+        
+        if UtilNetwork.isNetworkAvailable() {
+            
+            util.showActivityIndicator()
+            
+            RestClient.getTrailer(detailMovie.idDetailMovie) {toTrailer, error in
+                
+                self.util.hideActivityIndicator()
+                
+                if let _ = error {
+                    
+                    self.util.showMessage(self, message: "\(error)")
+                    
+                } else {
+                    
+                    self.toTrailer = toTrailer!
+                    
+                }
+            }
+            
+        } else {
+            
+            JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
+            
+        }
     }
-    */
+    
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
+//    }
+    
+    @IBAction func touchButtonTrailes(sender: AnyObject) {
+        
+        if toTrailer.trailers.count > 0 {
+            
+            let screen = FactoryStoryboard.storyboardMovie().instantiateViewControllerWithIdentifier("TrailerTableViewController") as! TrailerTableViewController
+            screen.toTrailer = toTrailer
+            
+            navigationController?.pushViewController(screen, animated: true)
+            
+        } else {
+            
+            JLToast.makeText("Esse filme não tem trailer").show()
+
+        }
+        
+       
+    }
+    
 }

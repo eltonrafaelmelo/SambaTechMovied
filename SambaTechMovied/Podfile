@@ -8,7 +8,8 @@ target 'SambaTechMovied' do
     pod 'SwiftLoader'
     pod 'KFSwiftImageLoader'
     pod 'ActionSheetPicker-3.0', '~> 2.0.4'
-
+    pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
+    pod 'JLToast', '~> 1.3'
 end
 
 target 'SambaTechMoviedTests' do
