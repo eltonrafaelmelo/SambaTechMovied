@@ -18,6 +18,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var list = [Movie]()
     let listFiltro = ["Mais populares", "Melhor avaliado"]
     var filter = "Mais populares"
+    var contadorPagina = 0
+    var movieLast = Movie()
     
     @IBOutlet var buttonFiltro: UIBarButtonItem!
     @IBOutlet var buttonUpdate: UIBarButtonItem!
@@ -29,11 +31,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         collectionMovie.delegate = self
         collectionMovie.dataSource = self
+        getMovie()
+
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        getMovie()
         
     }
     
@@ -44,6 +47,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBAction func touchButtonUpdate(sender: AnyObject) {
         
         if UtilNetwork.isNetworkAvailable() {
+            
+            self.contadorPagina = 0
             
             getMovie()
 
@@ -69,18 +74,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         filter = filtro
         
-        let listT = self.toListMovie.results
+//        let listT = self.toListMovie.results
         
         util.showActivityIndicator()
 
         if filter == "Mais populares" {
-            self.list = listT.sort({$0.popularity < $1.popularity})
+            
+            self.list = list.sort({$0.popularity < $1.popularity})
 
         } else {
             
-            self.list = listT.sort({$0.voteAverage > $1.voteAverage})
+            self.list = list.sort({$0.voteAverage > $1.voteAverage})
 
         }
+        
+        self.movieLast = self.list.last!
         
         self.util.hideActivityIndicator()
 
@@ -109,6 +117,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     let listT = self.toListMovie.results
                     
                     if self.filter == "Mais populares" {
+                        
                         self.list = listT.sort({$0.popularity < $1.popularity})
                         
                     } else {
@@ -116,6 +125,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         self.list = listT.sort({$0.voteAverage > $1.voteAverage})
                         
                     }
+                    
+                    self.contadorPagina = movie!.page + 1
+                    
+                    self.movieLast = self.list.last!
                     
                     self.reloadCollection()
                     
@@ -127,8 +140,67 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
 
         }
-        
        
+    }
+    
+    func getMoviePage() {
+        
+        if UtilNetwork.isNetworkAvailable() {
+            
+            util.showActivityIndicator()
+            
+            RestClient.getListMoviePage(contadorPagina) {movie, error in
+                
+                self.util.hideActivityIndicator()
+                
+                if let _ = error {
+                    
+                    self.util.showMessage(self, message: "\(error)")
+                    
+                } else {
+                    
+                    self.toListMovie = movie!
+                    
+                    let listT = self.toListMovie.results
+                    
+                    self.contadorPagina = movie!.page + 1
+                    
+                    self.addMoreMovie(listT)
+                    
+                }
+            }
+            
+        } else {
+            
+            JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
+            
+        }
+        
+    }
+    
+    func addMoreMovie(listMovies :[Movie]) {
+        
+        for moviewReceive in listMovies {
+            
+            list.append(moviewReceive)
+        }
+        
+        if self.filter == "Mais populares" {
+            
+            self.list = list.sort({$0.popularity < $1.popularity})
+            
+        } else {
+            
+            self.list = list.sort({$0.voteAverage > $1.voteAverage})
+            
+        }
+        
+        print("\(list.count)")
+        
+        self.movieLast = self.list.last!
+        
+        self.reloadCollection()
+        
     }
     
     func reloadCollection(){
@@ -143,7 +215,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let movie = list[indexPath.row]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MovieCollectionViewCell", forIndexPath: indexPath) as! cellCategory
                 cell.receiveCategory(movie)
+        
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let movie = list[indexPath.row]
+        
+        if contadorPagina != toListMovie.totalPages {
+            
+            if movie.title == movieLast.title {
+                print("Ultimo filme da lista: \(movie.title)")
+                getMoviePage()
+            }
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
