@@ -38,6 +38,7 @@
 		B176C9161C88FEBF00CDF064 /* TrailerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C9151C88FEBF00CDF064 /* TrailerTableViewController.swift */; };
 		B176C9181C88FEE900CDF064 /* TrailerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C9171C88FEE900CDF064 /* TrailerTableViewCell.swift */; };
 		B176C91A1C89064300CDF064 /* TrailherWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C9191C89064300CDF064 /* TrailherWebViewViewController.swift */; };
+		B1F3D3791C95BD6600B33728 /* UtilDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3D3781C95BD6600B33728 /* UtilDate.swift */; };
 		DD3F948A1708A9724C3260DA /* Pods_SambaTechMovied.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076BFC11FE3509B3C484B4FD /* Pods_SambaTechMovied.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		B176C9151C88FEBF00CDF064 /* TrailerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailerTableViewController.swift; path = SambaTechMovied/Model/TrailerTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		B176C9171C88FEE900CDF064 /* TrailerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailerTableViewCell.swift; path = SambaTechMovied/Model/TrailerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B176C9191C89064300CDF064 /* TrailherWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailherWebViewViewController.swift; sourceTree = "<group>"; };
+		B1F3D3781C95BD6600B33728 /* UtilDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilDate.swift; path = SambaTechMovied/UtilDate.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				B120CBDB1C87D6A50051A42B /* UtilFont.swift */,
 				B120CBD71C87C8AF0051A42B /* Util.swift */,
 				B176C90E1C88E64F00CDF064 /* UtilNetwork.swift */,
+				B1F3D3781C95BD6600B33728 /* UtilDate.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				B169A58A1C865672000A2111 /* ViewController.swift in Sources */,
 				8131EE801C86FE0B000EADD2 /* RestMovie.swift in Sources */,
 				B169A5CF1C8679A2000A2111 /* ProductionCountrie.swift in Sources */,
+				B1F3D3791C95BD6600B33728 /* UtilDate.swift in Sources */,
 				B120CBDE1C87D6A50051A42B /* UtilFont.swift in Sources */,
 				B120CBD41C879DD40051A42B /* FactoryStoryboard.swift in Sources */,
 				B120CBD61C87A1980051A42B /* DetailMovieViewController.swift in Sources */,

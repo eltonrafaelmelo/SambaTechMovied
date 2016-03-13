@@ -16,7 +16,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var toListMovie = TOMovieLIst()
     var util = Util.sharedInstance
     var list = [Movie]()
-    let listFiltro = ["Mais populares", "Melhor avaliado"]
+    let listFiltro = ["Mais populares", "Melhor avaliado", "Data de lançamento"]
     var filter = "Mais populares"
     var contadorPagina = 0
     var movieLast = Movie()
@@ -73,18 +73,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func filtroFilmes(filtro :String) {
         
         filter = filtro
-        
-//        let listT = self.toListMovie.results
-        
+                
         util.showActivityIndicator()
 
         if filter == "Mais populares" {
             
             self.list = list.sort({$0.popularity < $1.popularity})
 
-        } else {
+        } else if filtro == "Melhor avaliado"{
             
             self.list = list.sort({$0.voteAverage > $1.voteAverage})
+
+        } else {
+            
+            self.list = list.sort({ $0.getDateMovie().compare($1.getDateMovie()) == NSComparisonResult.OrderedDescending })
 
         }
         
@@ -120,9 +122,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         
                         self.list = listT.sort({$0.popularity < $1.popularity})
                         
-                    } else {
+                    } else if self.filter == "Melhor avaliado"{
                         
                         self.list = listT.sort({$0.voteAverage > $1.voteAverage})
+                        
+                    } else {
+                        
+                        self.list = listT.sort({ $0.getDateMovie().compare($1.getDateMovie()) == NSComparisonResult.OrderedDescending })
                         
                     }
                     
@@ -189,9 +195,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             self.list = list.sort({$0.popularity < $1.popularity})
             
-        } else {
+        } else if self.filter == "Melhor avaliado"{
             
             self.list = list.sort({$0.voteAverage > $1.voteAverage})
+            
+        } else {
+            
+            self.list = list.sort({ $0.getDateMovie().compare($1.getDateMovie()) == NSComparisonResult.OrderedDescending })
             
         }
         

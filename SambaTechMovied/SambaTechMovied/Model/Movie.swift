@@ -8,23 +8,25 @@
 
 import Foundation
 import ObjectMapper
+import KFSwiftImageLoader
+
 
 class Movie: Mappable {
-
-     var posterPath       = ""
-     var adult            = false
-     var overview         = ""
-     var releaseDate      = ""
-     var genreIds         = [Int]()
-     var idMovie          = 0
-     var originalTitle    = ""
-     var originalLanguage = ""
-     var title            = ""
-     var backdropPath     = ""
-     var popularity       = 0.0
-     var voteCount        = 0
-     var video            = false
-     var voteAverage      = 0.0
+    
+    var posterPath       = ""
+    var adult            = false
+    var overview         = ""
+    var releaseDate      = ""
+    var genreIds         = [Int]()
+    var idMovie          = 0
+    var originalTitle    = ""
+    var originalLanguage = ""
+    var title            = ""
+    var backdropPath     = ""
+    var popularity       = 0.0
+    var voteCount        = 0
+    var video            = false
+    var voteAverage      = 0.0
     
     required  convenience init?(_ map: Map) {
         self.init()
@@ -45,5 +47,16 @@ class Movie: Mappable {
         voteCount          <- map["vote_count"]
         video              <- map["video"]
         voteAverage        <- map["vote_average"]
+    }
+    
+    /*
+    */
+    
+    func getDateMovie() -> NSDate {
+        let toArray = releaseDate.componentsSeparatedByString("-")
+        let day = toArray[2]
+        let month = toArray[1]
+        let year = toArray[0]
+        return UtilDate.dataCom(Int(day)!, mes: Int(month)!, ano: Int(year)!, hora: 0, minuto: 0, segundo: 0)
     }
 }
