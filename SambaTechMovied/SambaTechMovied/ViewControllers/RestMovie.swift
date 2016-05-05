@@ -26,7 +26,7 @@ class RestClient {
     
     class func getDetailMovie(codMovie :Int, completionHandler: (movie: DetailMovie?, error: ErrorType?) -> () ){
 
-        let urlFinal = "https://api.themoviedb.org/3/movie/\(codMovie)?api_key=a573db5e752a82b043ab78deb9ab2a2b"
+        let urlFinal = "http://api.themoviedb.org/3/movie/\(codMovie)?api_key=a573db5e752a82b043ab78deb9ab2a2b"
         Alamofire.request(.GET, urlFinal, parameters: nil)
             .responseObject { (response: DetailMovie?, error: ErrorType?) in
                 completionHandler(movie: response as DetailMovie?, error: error)
@@ -48,6 +48,16 @@ class RestClient {
         Alamofire.request(.GET, urlFinal, parameters: nil)
             .responseObject { (response: TOTrailer?, error: ErrorType?) in
                 completionHandler(toTrailer: response as TOTrailer?, error: error)
+        }
+    }
+    
+    class func getPhotos(codMovie :Int, completionHandler: (toPhoto: TOPhoto?, error: ErrorType?) -> () ){
+        
+        let urlFinal = "http://api.themoviedb.org/3/movie/\(codMovie)/images?api_key=a573db5e752a82b043ab78deb9ab2a2b"
+        
+        Alamofire.request(.GET, urlFinal, parameters: nil)
+            .responseObject { (response: TOPhoto?, error: ErrorType?) in
+                completionHandler(toPhoto: response as TOPhoto?, error: error)
         }
     }
     

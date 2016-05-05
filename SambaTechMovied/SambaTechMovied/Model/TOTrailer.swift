@@ -22,6 +22,5 @@ class TOTrailer: Mappable {
     func mapping(map: Map) {
         id        <- map["id"]
         trailers  <- map["results"]
-      
     }
 }

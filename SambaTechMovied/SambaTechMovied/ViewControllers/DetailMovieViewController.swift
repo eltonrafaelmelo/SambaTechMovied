@@ -39,6 +39,7 @@ class DetailMovieViewController: UIViewController {
     @IBOutlet weak var labelTitleResumo: UILabel!
     var trailerTable = TrailerTableViewController()
     var toTrailer = TOTrailer()
+    var toPhoto = TOPhoto()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class DetailMovieViewController: UIViewController {
         title = detailMovie.title
         
         getTrailher()
+        getPhoto()
         
         setValueInfo()
         
@@ -131,6 +133,34 @@ class DetailMovieViewController: UIViewController {
         }
     }
     
+    func getPhoto() {
+        
+        if UtilNetwork.isNetworkAvailable() {
+            
+            util.showActivityIndicator()
+            
+            RestClient.getPhotos(detailMovie.idDetailMovie) {toPhoto, error in
+                
+                self.util.hideActivityIndicator()
+                
+                if let _ = error {
+                    
+                    self.util.showMessage(self, message: "\(error)")
+                    
+                } else {
+                    
+                    self.toPhoto = toPhoto!
+                    
+                }
+            }
+            
+        } else {
+            
+            JLToast.makeText("No memento você está sem internet. Tente novamente quando tiver conexão.").show()
+            
+        }
+    }
+    
     
     
     // MARK: - Navigation
@@ -158,4 +188,7 @@ class DetailMovieViewController: UIViewController {
        
     }
     
+    @IBAction func touchButtonPhotos(sender: AnyObject) {
+        
+    }
 }

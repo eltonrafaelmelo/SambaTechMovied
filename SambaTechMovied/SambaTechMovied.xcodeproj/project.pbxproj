@@ -18,6 +18,10 @@
 		B120CBDC1C87D6A50051A42B /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBD91C87D6A50051A42B /* UIColor+Hex.swift */; };
 		B120CBDD1C87D6A50051A42B /* UtilColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBDA1C87D6A50051A42B /* UtilColors.swift */; };
 		B120CBDE1C87D6A50051A42B /* UtilFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120CBDB1C87D6A50051A42B /* UtilFont.swift */; };
+		B13942A31CDABF9B009B0C9D /* Posters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13942A21CDABF9B009B0C9D /* Posters.swift */; };
+		B13942A51CDAC18C009B0C9D /* Backdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13942A41CDAC18C009B0C9D /* Backdrop.swift */; };
+		B13942A71CDAC1E2009B0C9D /* TOPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13942A61CDAC1E2009B0C9D /* TOPhoto.swift */; };
+		B13942A91CDAD366009B0C9D /* ViewImagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13942A81CDAD366009B0C9D /* ViewImagesController.swift */; };
 		B169A5881C865672000A2111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5871C865672000A2111 /* AppDelegate.swift */; };
 		B169A58A1C865672000A2111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B169A5891C865672000A2111 /* ViewController.swift */; };
 		B169A58F1C865672000A2111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B169A58E1C865672000A2111 /* Assets.xcassets */; };
@@ -74,6 +78,10 @@
 		B120CBD91C87D6A50051A42B /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "SambaTechMovied/UIColor+Hex.swift"; sourceTree = SOURCE_ROOT; };
 		B120CBDA1C87D6A50051A42B /* UtilColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilColors.swift; path = SambaTechMovied/UtilColors.swift; sourceTree = SOURCE_ROOT; };
 		B120CBDB1C87D6A50051A42B /* UtilFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilFont.swift; path = SambaTechMovied/UtilFont.swift; sourceTree = SOURCE_ROOT; };
+		B13942A21CDABF9B009B0C9D /* Posters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posters.swift; sourceTree = "<group>"; };
+		B13942A41CDAC18C009B0C9D /* Backdrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backdrop.swift; sourceTree = "<group>"; };
+		B13942A61CDAC1E2009B0C9D /* TOPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOPhoto.swift; sourceTree = "<group>"; };
+		B13942A81CDAD366009B0C9D /* ViewImagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewImagesController.swift; sourceTree = "<group>"; };
 		B169A5841C865672000A2111 /* SambaTechMovied.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SambaTechMovied.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B169A5871C865672000A2111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B169A5891C865672000A2111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,15 +221,18 @@
 		B169A5B61C866818000A2111 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B13942A41CDAC18C009B0C9D /* Backdrop.swift */,
 				B169A5C81C8673A7000A2111 /* DetailMovie.swift */,
 				B169A5CA1C867832000A2111 /* Genre.swift */,
 				B169A5C01C866B81000A2111 /* Images.swift */,
 				B169A5C61C867022000A2111 /* Movie.swift */,
+				B13942A21CDABF9B009B0C9D /* Posters.swift */,
 				B169A5CC1C867901000A2111 /* ProductionCompanie.swift */,
 				B169A5CE1C8679A2000A2111 /* ProductionCountrie.swift */,
 				B169A5BE1C866A35000A2111 /* Settings.swift */,
 				B169A5D01C867A64000A2111 /* SpokenLanguage.swift */,
 				B169A5C41C866F3A000A2111 /* TOMovieLIst.swift */,
+				B13942A61CDAC1E2009B0C9D /* TOPhoto.swift */,
 				B176C9111C88FBA400CDF064 /* TOTrailer.swift */,
 				B176C9131C88FBB900CDF064 /* Trailer.swift */,
 			);
@@ -255,6 +266,7 @@
 		B169A5BA1C866818000A2111 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B13942A81CDAD366009B0C9D /* ViewImagesController.swift */,
 				B169A5BB1C866818000A2111 /* Cells */,
 				B169A5BC1C866818000A2111 /* TableViews */,
 				B120CBD51C87A1980051A42B /* DetailMovieViewController.swift */,
@@ -359,7 +371,6 @@
 				TargetAttributes = {
 					B169A5831C865672000A2111 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = XJ6H4ER29F;
 					};
 					B169A5971C865675000A2111 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -473,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B176C91A1C89064300CDF064 /* TrailherWebViewViewController.swift in Sources */,
+				B13942A71CDAC1E2009B0C9D /* TOPhoto.swift in Sources */,
 				B169A5D11C867A64000A2111 /* SpokenLanguage.swift in Sources */,
 				B169A5BF1C866A35000A2111 /* Settings.swift in Sources */,
 				B169A5C11C866B81000A2111 /* Images.swift in Sources */,
@@ -485,7 +497,9 @@
 				B169A5C51C866F3A000A2111 /* TOMovieLIst.swift in Sources */,
 				B169A5CD1C867901000A2111 /* ProductionCompanie.swift in Sources */,
 				B120CBDD1C87D6A50051A42B /* UtilColors.swift in Sources */,
+				B13942A31CDABF9B009B0C9D /* Posters.swift in Sources */,
 				B176C9141C88FBB900CDF064 /* Trailer.swift in Sources */,
+				B13942A51CDAC18C009B0C9D /* Backdrop.swift in Sources */,
 				B169A58A1C865672000A2111 /* ViewController.swift in Sources */,
 				8131EE801C86FE0B000EADD2 /* RestMovie.swift in Sources */,
 				B169A5CF1C8679A2000A2111 /* ProductionCountrie.swift in Sources */,
@@ -493,6 +507,7 @@
 				B120CBDE1C87D6A50051A42B /* UtilFont.swift in Sources */,
 				B120CBD41C879DD40051A42B /* FactoryStoryboard.swift in Sources */,
 				B120CBD61C87A1980051A42B /* DetailMovieViewController.swift in Sources */,
+				B13942A91CDAD366009B0C9D /* ViewImagesController.swift in Sources */,
 				B176C9181C88FEE900CDF064 /* TrailerTableViewCell.swift in Sources */,
 				B169A5881C865672000A2111 /* AppDelegate.swift in Sources */,
 				B169A5CB1C867832000A2111 /* Genre.swift in Sources */,
