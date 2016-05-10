@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D9F03A57B94F31EB9857C8 /* Pods_SambaTechMoviedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FEE70F59355C7E99FB30D4 /* Pods_SambaTechMoviedUITests.framework */; };
+		0BD49BAD7804B0140B3CE7D5 /* Pods_SambaTechMoviedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7C57A91EAEACD2C7939922 /* Pods_SambaTechMoviedTests.framework */; };
+		6EBC441FAE969F1EEBC0B2E9 /* Pods_SambaTechMovied.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D321A1928A2F7E39E2FACCDF /* Pods_SambaTechMovied.framework */; };
 		8131EE801C86FE0B000EADD2 /* RestMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8131EE7F1C86FE0B000EADD2 /* RestMovie.swift */; };
 		8131EE821C870338000EADD2 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8131EE811C870338000EADD2 /* Movie.storyboard */; };
 		B120CBCB1C8791EA0051A42B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B120CBC71C8791EA0051A42B /* LaunchScreen.storyboard */; };
@@ -42,8 +45,9 @@
 		B176C9161C88FEBF00CDF064 /* TrailerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C9151C88FEBF00CDF064 /* TrailerTableViewController.swift */; };
 		B176C9181C88FEE900CDF064 /* TrailerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C9171C88FEE900CDF064 /* TrailerTableViewCell.swift */; };
 		B176C91A1C89064300CDF064 /* TrailherWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176C9191C89064300CDF064 /* TrailherWebViewViewController.swift */; };
+		B192B14F1CE11855004223E3 /* teste.m in Sources */ = {isa = PBXBuildFile; fileRef = B192B14E1CE11855004223E3 /* teste.m */; };
+		B1C728881CE1291C0085E341 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C728871CE1291C0085E341 /* PhotosCollectionViewController.swift */; };
 		B1F3D3791C95BD6600B33728 /* UtilDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F3D3781C95BD6600B33728 /* UtilDate.swift */; };
-		DD3F948A1708A9724C3260DA /* Pods_SambaTechMovied.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076BFC11FE3509B3C484B4FD /* Pods_SambaTechMovied.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +68,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		076BFC11FE3509B3C484B4FD /* Pods_SambaTechMovied.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SambaTechMovied.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D44BCA08249EABEADFA6CF4 /* Pods-SambaTechMovied.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMovied.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied.debug.xcconfig"; sourceTree = "<group>"; };
-		56CD46605BE3520DF5D0C194 /* Pods-SambaTechMovied.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMovied.release.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied.release.xcconfig"; sourceTree = "<group>"; };
+		10C0B83C749CB3477AD8D694 /* Pods-SambaTechMoviedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMoviedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMoviedUITests/Pods-SambaTechMoviedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		19EEC04C2835CCCD90ABF457 /* Pods-SambaTechMoviedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMoviedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMoviedUITests/Pods-SambaTechMoviedUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		45D10C52FEAB2E3A9F28E409 /* Pods-SambaTechMovied.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMovied.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied.debug.xcconfig"; sourceTree = "<group>"; };
+		54D5ECCEE6E0EFB9B091F399 /* Pods-SambaTechMoviedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMoviedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMoviedTests/Pods-SambaTechMoviedTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E4BFF3220D938E66CCC71E6 /* Pods-SambaTechMovied.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMovied.release.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied.release.xcconfig"; sourceTree = "<group>"; };
 		8131EE7F1C86FE0B000EADD2 /* RestMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestMovie.swift; path = SambaTechMovied/ViewControllers/RestMovie.swift; sourceTree = SOURCE_ROOT; };
 		8131EE811C870338000EADD2 /* Movie.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Movie.storyboard; path = SambaTechMovied/ViewControllers/Movie.storyboard; sourceTree = SOURCE_ROOT; };
 		B120CBC81C8791EA0051A42B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SambaTechMovied/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
@@ -108,7 +114,15 @@
 		B176C9151C88FEBF00CDF064 /* TrailerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailerTableViewController.swift; path = SambaTechMovied/Model/TrailerTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		B176C9171C88FEE900CDF064 /* TrailerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrailerTableViewCell.swift; path = SambaTechMovied/Model/TrailerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B176C9191C89064300CDF064 /* TrailherWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailherWebViewViewController.swift; sourceTree = "<group>"; };
+		B192B14C1CE11854004223E3 /* SambaTechMovied-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SambaTechMovied-Bridging-Header.h"; sourceTree = "<group>"; };
+		B192B14D1CE11855004223E3 /* teste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teste.h; sourceTree = "<group>"; };
+		B192B14E1CE11855004223E3 /* teste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teste.m; sourceTree = "<group>"; };
+		B1C728871CE1291C0085E341 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		B1F3D3781C95BD6600B33728 /* UtilDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilDate.swift; path = SambaTechMovied/UtilDate.swift; sourceTree = SOURCE_ROOT; };
+		B1FEE70F59355C7E99FB30D4 /* Pods_SambaTechMoviedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SambaTechMoviedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D321A1928A2F7E39E2FACCDF /* Pods_SambaTechMovied.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SambaTechMovied.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F8D32E441377F1B28230DE /* Pods-SambaTechMoviedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SambaTechMoviedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SambaTechMoviedTests/Pods-SambaTechMoviedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF7C57A91EAEACD2C7939922 /* Pods_SambaTechMoviedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SambaTechMoviedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD3F948A1708A9724C3260DA /* Pods_SambaTechMovied.framework in Frameworks */,
+				6EBC441FAE969F1EEBC0B2E9 /* Pods_SambaTechMovied.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BD49BAD7804B0140B3CE7D5 /* Pods_SambaTechMoviedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,25 +146,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D9F03A57B94F31EB9857C8 /* Pods_SambaTechMoviedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D4B1160B2D37A53F520CFBB /* Frameworks */ = {
+		A0B2428F3ABBAD2241981721 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				076BFC11FE3509B3C484B4FD /* Pods_SambaTechMovied.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		66C0C9725B4B17A7B0705F69 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0D44BCA08249EABEADFA6CF4 /* Pods-SambaTechMovied.debug.xcconfig */,
-				56CD46605BE3520DF5D0C194 /* Pods-SambaTechMovied.release.xcconfig */,
+				45D10C52FEAB2E3A9F28E409 /* Pods-SambaTechMovied.debug.xcconfig */,
+				6E4BFF3220D938E66CCC71E6 /* Pods-SambaTechMovied.release.xcconfig */,
+				E6F8D32E441377F1B28230DE /* Pods-SambaTechMoviedTests.debug.xcconfig */,
+				54D5ECCEE6E0EFB9B091F399 /* Pods-SambaTechMoviedTests.release.xcconfig */,
+				19EEC04C2835CCCD90ABF457 /* Pods-SambaTechMoviedUITests.debug.xcconfig */,
+				10C0B83C749CB3477AD8D694 /* Pods-SambaTechMoviedUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -161,8 +173,8 @@
 				B169A59B1C865675000A2111 /* SambaTechMoviedTests */,
 				B169A5A61C865675000A2111 /* SambaTechMoviedUITests */,
 				B169A5851C865672000A2111 /* Products */,
-				66C0C9725B4B17A7B0705F69 /* Pods */,
-				1D4B1160B2D37A53F520CFBB /* Frameworks */,
+				A0B2428F3ABBAD2241981721 /* Pods */,
+				D30E7AF7265B8115C688D362 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +201,9 @@
 				B169A5891C865672000A2111 /* ViewController.swift */,
 				B169A5BA1C866818000A2111 /* ViewControllers */,
 				B169A5BD1C866818000A2111 /* WS */,
+				B192B14D1CE11855004223E3 /* teste.h */,
+				B192B14E1CE11855004223E3 /* teste.m */,
+				B192B14C1CE11854004223E3 /* SambaTechMovied-Bridging-Header.h */,
 			);
 			path = SambaTechMovied;
 			sourceTree = "<group>";
@@ -271,6 +286,7 @@
 				B169A5BC1C866818000A2111 /* TableViews */,
 				B120CBD51C87A1980051A42B /* DetailMovieViewController.swift */,
 				B176C9191C89064300CDF064 /* TrailherWebViewViewController.swift */,
+				B1C728871CE1291C0085E341 /* PhotosCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -300,6 +316,16 @@
 			path = WS;
 			sourceTree = "<group>";
 		};
+		D30E7AF7265B8115C688D362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D321A1928A2F7E39E2FACCDF /* Pods_SambaTechMovied.framework */,
+				FF7C57A91EAEACD2C7939922 /* Pods_SambaTechMoviedTests.framework */,
+				B1FEE70F59355C7E99FB30D4 /* Pods_SambaTechMoviedUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,12 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B169A5AC1C865675000A2111 /* Build configuration list for PBXNativeTarget "SambaTechMovied" */;
 			buildPhases = (
-				B7105B5F5A55ADD6AF790C90 /* Check Pods Manifest.lock */,
+				BCB94AA8B71549FBEDA46A0F /* 📦 Check Pods Manifest.lock */,
 				B169A5801C865672000A2111 /* Sources */,
 				B169A5811C865672000A2111 /* Frameworks */,
 				B169A5821C865672000A2111 /* Resources */,
-				EEFF037EACEAD78FA53180A1 /* Embed Pods Frameworks */,
-				059AF29C3C678E88D44A00BA /* Copy Pods Resources */,
+				A6DCC296D25F5E125E51F228 /* 📦 Embed Pods Frameworks */,
+				68C303E0DE2FD87B318D814F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,9 +353,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B169A5AF1C865675000A2111 /* Build configuration list for PBXNativeTarget "SambaTechMoviedTests" */;
 			buildPhases = (
+				25C1544C820A33BDB9E3E293 /* 📦 Check Pods Manifest.lock */,
 				B169A5941C865675000A2111 /* Sources */,
 				B169A5951C865675000A2111 /* Frameworks */,
 				B169A5961C865675000A2111 /* Resources */,
+				C09AC9495B67F2782E618866 /* 📦 Embed Pods Frameworks */,
+				0E29B3A831F0846B24A506A0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,9 +374,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B169A5B21C865675000A2111 /* Build configuration list for PBXNativeTarget "SambaTechMoviedUITests" */;
 			buildPhases = (
+				9A5191F26BE77FE9500872E7 /* 📦 Check Pods Manifest.lock */,
 				B169A59F1C865675000A2111 /* Sources */,
 				B169A5A01C865675000A2111 /* Frameworks */,
 				B169A5A11C865675000A2111 /* Resources */,
+				30295D3DC77E8D9674E3597F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,7 +396,7 @@
 		B169A57C1C865671000A2111 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = SambaTech;
 				TargetAttributes = {
@@ -431,29 +462,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		059AF29C3C678E88D44A00BA /* Copy Pods Resources */ = {
+		0E29B3A831F0846B24A506A0 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SambaTechMoviedTests/Pods-SambaTechMoviedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B7105B5F5A55ADD6AF790C90 /* Check Pods Manifest.lock */ = {
+		25C1544C820A33BDB9E3E293 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,19 +492,94 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EEFF037EACEAD78FA53180A1 /* Embed Pods Frameworks */ = {
+		30295D3DC77E8D9674E3597F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SambaTechMoviedUITests/Pods-SambaTechMoviedUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68C303E0DE2FD87B318D814F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A5191F26BE77FE9500872E7 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A6DCC296D25F5E125E51F228 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SambaTechMovied/Pods-SambaTechMovied-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCB94AA8B71549FBEDA46A0F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C09AC9495B67F2782E618866 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SambaTechMoviedTests/Pods-SambaTechMoviedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -488,6 +594,7 @@
 				B169A5D11C867A64000A2111 /* SpokenLanguage.swift in Sources */,
 				B169A5BF1C866A35000A2111 /* Settings.swift in Sources */,
 				B169A5C11C866B81000A2111 /* Images.swift in Sources */,
+				B192B14F1CE11855004223E3 /* teste.m in Sources */,
 				B120CBDC1C87D6A50051A42B /* UIColor+Hex.swift in Sources */,
 				B169A5C91C8673A7000A2111 /* DetailMovie.swift in Sources */,
 				B176C9161C88FEBF00CDF064 /* TrailerTableViewController.swift in Sources */,
@@ -505,6 +612,7 @@
 				B169A5CF1C8679A2000A2111 /* ProductionCountrie.swift in Sources */,
 				B1F3D3791C95BD6600B33728 /* UtilDate.swift in Sources */,
 				B120CBDE1C87D6A50051A42B /* UtilFont.swift in Sources */,
+				B1C728881CE1291C0085E341 /* PhotosCollectionViewController.swift in Sources */,
 				B120CBD41C879DD40051A42B /* FactoryStoryboard.swift in Sources */,
 				B120CBD61C87A1980051A42B /* DetailMovieViewController.swift in Sources */,
 				B13942A91CDAD366009B0C9D /* ViewImagesController.swift in Sources */,
@@ -650,9 +758,10 @@
 		};
 		B169A5AD1C865675000A2111 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D44BCA08249EABEADFA6CF4 /* Pods-SambaTechMovied.debug.xcconfig */;
+			baseConfigurationReference = 45D10C52FEAB2E3A9F28E409 /* Pods-SambaTechMovied.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SambaTechMovied/Info.plist;
@@ -661,14 +770,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.sambatech.SambaTechMovied;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SambaTechMovied/SambaTechMovied-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B169A5AE1C865675000A2111 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56CD46605BE3520DF5D0C194 /* Pods-SambaTechMovied.release.xcconfig */;
+			baseConfigurationReference = 6E4BFF3220D938E66CCC71E6 /* Pods-SambaTechMovied.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SambaTechMovied/Info.plist;
@@ -677,11 +789,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.sambatech.SambaTechMovied;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SambaTechMovied/SambaTechMovied-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		B169A5B01C865675000A2111 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F8D32E441377F1B28230DE /* Pods-SambaTechMoviedTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SambaTechMoviedTests/Info.plist;
@@ -694,6 +808,7 @@
 		};
 		B169A5B11C865675000A2111 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54D5ECCEE6E0EFB9B091F399 /* Pods-SambaTechMoviedTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = SambaTechMoviedTests/Info.plist;
@@ -706,6 +821,7 @@
 		};
 		B169A5B31C865675000A2111 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19EEC04C2835CCCD90ABF457 /* Pods-SambaTechMoviedUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SambaTechMoviedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -718,6 +834,7 @@
 		};
 		B169A5B41C865675000A2111 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10C0B83C749CB3477AD8D694 /* Pods-SambaTechMoviedUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SambaTechMoviedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

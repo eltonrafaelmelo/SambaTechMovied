@@ -1,0 +1,6 @@
+framework module Pods_SambaTechMoviedUITests {
+  umbrella header "Pods-SambaTechMoviedUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

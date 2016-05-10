@@ -28,7 +28,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         title = "SambaTech"
         self.navigationItem.rightBarButtonItems = [buttonFiltro, buttonUpdate]
-
         collectionMovie.delegate = self
         collectionMovie.dataSource = self
         getMovie()

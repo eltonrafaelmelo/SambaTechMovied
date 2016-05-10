@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -59,8 +59,8 @@ code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\""
-    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements "$1"
+    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements \"$1\""
+    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1"
   fi
 }
 
@@ -84,22 +84,28 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-SambaTechMovied/ActionSheetPicker_3_0.framework"
-  install_framework "Pods-SambaTechMovied/Alamofire.framework"
-  install_framework "Pods-SambaTechMovied/AlamofireObjectMapper.framework"
-  install_framework "Pods-SambaTechMovied/JLToast.framework"
-  install_framework "Pods-SambaTechMovied/KFSwiftImageLoader.framework"
-  install_framework "Pods-SambaTechMovied/ObjectMapper.framework"
-  install_framework "Pods-SambaTechMovied/ReachabilitySwift.framework"
-  install_framework "Pods-SambaTechMovied/SwiftLoader.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AlamofireObjectMapper/AlamofireObjectMapper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JLToast/JLToast.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KFSwiftImageLoader/KFSwiftImageLoader.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReachabilitySwift/ReachabilitySwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SKPhotoBrowser/SKPhotoBrowser.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftLoader/SwiftLoader.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-SambaTechMovied/ActionSheetPicker_3_0.framework"
-  install_framework "Pods-SambaTechMovied/Alamofire.framework"
-  install_framework "Pods-SambaTechMovied/AlamofireObjectMapper.framework"
-  install_framework "Pods-SambaTechMovied/JLToast.framework"
-  install_framework "Pods-SambaTechMovied/KFSwiftImageLoader.framework"
-  install_framework "Pods-SambaTechMovied/ObjectMapper.framework"
-  install_framework "Pods-SambaTechMovied/ReachabilitySwift.framework"
-  install_framework "Pods-SambaTechMovied/SwiftLoader.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Alamofire/Alamofire.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AlamofireObjectMapper/AlamofireObjectMapper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JLToast/JLToast.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KFSwiftImageLoader/KFSwiftImageLoader.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ObjectMapper/ObjectMapper.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReachabilitySwift/ReachabilitySwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Realm/Realm.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SKPhotoBrowser/SKPhotoBrowser.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftLoader/SwiftLoader.framework"
 fi
