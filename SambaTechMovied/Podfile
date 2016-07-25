@@ -13,8 +13,6 @@ target 'SambaTechMovied' do
     pod 'JLToast', '~> 1.3'
     pod 'SKPhotoBrowser'
     pod 'RealmSwift'
-    pod 'fastlane' ‘cocoapods’, :git => ‘https://github.com/CocoaPods/CocoaPods.git'
-
 end
 
 target 'SambaTechMoviedTests' do
