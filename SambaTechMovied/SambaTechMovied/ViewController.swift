@@ -61,6 +61,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBAction func touchButtonFiltro(sender: AnyObject) {
         ActionSheetStringPicker.showPickerWithTitle("Ordenar", rows: self.listFiltro, initialSelection: 0, doneBlock: {
+            
             picker, index, value in
             
             self.filtroFilmes(value as! String)
