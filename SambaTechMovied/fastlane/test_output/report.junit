@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites tests='53' failures='14'>
+  <testsuite name='AdressViewTestCase' tests='3' failures='1'>
+    <testcase classname='AdressViewTestCase' name='testInit' time='0.002'/>
+    <testcase classname='AdressViewTestCase' name='testRevertAddresses'>
+      <failure message='((address.endAddress.text) equal to ([start objectForKey:@&quot;address&quot;])) failed: (&quot;&lt;e0fc1b1d ea7f0000&gt;&quot;) is not equal to (&quot;&lt;50ec5f11 01000000&gt;&quot;)'>ios.ByndTests/AdressViewTestCase.m:50</failure>
+    </testcase>
+    <testcase classname='AdressViewTestCase' name='testSetAddress' time='0.001'/>
+  </testsuite>
+  <testsuite name='BasicFunctionsTests' tests='2' failures='0'>
+    <testcase classname='BasicFunctionsTests' name='testBaseURLRequest' time='0.008'/>
+    <testcase classname='BasicFunctionsTests' name='testPerformanceExample' time='1.124'/>
+  </testsuite>
+  <testsuite name='CarpoolingTestCase' tests='2' failures='0'>
+    <testcase classname='CarpoolingTestCase' name='testExample' time='0.000'/>
+    <testcase classname='CarpoolingTestCase' name='testPerformanceExample' time='0.571'/>
+  </testsuite>
+  <testsuite name='NavigationPivotTestCase' tests='11' failures='0'>
+    <testcase classname='NavigationPivotTestCase' name='testInitEmptyArray' time='0.001'/>
+    <testcase classname='NavigationPivotTestCase' name='testInitNil' time='0.001'/>
+    <testcase classname='NavigationPivotTestCase' name='testInitWithManyObjectsArray' time='0.000'/>
+    <testcase classname='NavigationPivotTestCase' name='testInitWithOneObjectArray' time='0.000'/>
+    <testcase classname='NavigationPivotTestCase' name='testInitWithStrategyBeforeStart' time='0.001'/>
+    <testcase classname='NavigationPivotTestCase' name='testInitWithStrategyFinalStop' time='0.000'/>
+    <testcase classname='NavigationPivotTestCase' name='testInitWithTwoObjectsArray' time='0.000'/>
+    <testcase classname='NavigationPivotTestCase' name='testPerformanceExample' time='0.287'/>
+    <testcase classname='NavigationPivotTestCase' name='testPivotWithOnlyCount' time='0.000'/>
+    <testcase classname='NavigationPivotTestCase' name='testRestPivotInformation' time='0.000'/>
+    <testcase classname='NavigationPivotTestCase' name='testWithDiferentsKindObjects' time='0.000'/>
+  </testsuite>
+  <testsuite name='NotificationTestCase' tests='28' failures='13'>
+    <testcase classname='NotificationTestCase' name='testAcceptStatusAskNotification' time='0.008'/>
+    <testcase classname='NotificationTestCase' name='testGetCountNotifications' time='0.002'/>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;Daqui à &quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:315</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;segundo(s)&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:316</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;Daqui à &quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:322</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;minuto(s)&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:323</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;Daqui à &quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:328</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;hora&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:329</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;há &quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:337</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;segundo(s)&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:338</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;há &quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:343</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;minuto(s)&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:344</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;há &quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:349</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;hora&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:350</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetCustomTimeFromData'>
+      <failure message='(([dateString containsString:@&quot;Ontem&quot;]) is true) failed'>ios.ByndTests/NotificationTestCase.m:355</failure>
+    </testcase>
+    <testcase classname='NotificationTestCase' name='testGetInformationFromAskerAndOffer' time='0.000'/>
+    <testcase classname='NotificationTestCase' name='testGetInformationFromAskerAndOfferRoute' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testInit' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testIsAskRide' time='0.000'/>
+    <testcase classname='NotificationTestCase' name='testIsAskRideOld' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testIsScheduleRide' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testNotficationContainerInfoToBuildTableSourceIdentify' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testNotficationContainerInfoToBuildTableSourceSectionWithManyKind' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testNotficationContainerInfoToBuildTableSourceWithOneKind' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testNotificationContainerInit' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testObserverReceiveRememberAfter3Seconds' time='0.003'/>
+    <testcase classname='NotificationTestCase' name='testRejectStatusAskNotification' time='0.001'/>
+    <testcase classname='NotificationTestCase' name='testTryAcceptNotRequestNotification' time='0.001'/>
+  </testsuite>
+  <testsuite name='ProfileTestCase' tests='2' failures='0'>
+    <testcase classname='ProfileTestCase' name='testExample' time='0.000'/>
+    <testcase classname='ProfileTestCase' name='testPerformanceExample' time='0.254'/>
+  </testsuite>
+  <testsuite name='UtilTestCase' tests='2' failures='0'>
+    <testcase classname='UtilTestCase' name='testPerformanceExample' time='0.252'/>
+    <testcase classname='UtilTestCase' name='testSubscribeOnChannel' time='0.000'/>
+  </testsuite>
+  <testsuite name='ios_ByndTests' tests='3' failures='0'>
+    <testcase classname='ios_ByndTests' name='testPerformanceExample' time='0.256'/>
+    <testcase classname='ios_ByndTests' name='testPressDriver' time='0.001'/>
+    <testcase classname='ios_ByndTests' name='testPressPassenger' time='0.001'/>
+  </testsuite>
+</testsuites>
